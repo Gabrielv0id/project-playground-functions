@@ -1,4 +1,3 @@
-
 function compareTrue() {
   // seu código aqui
 }
