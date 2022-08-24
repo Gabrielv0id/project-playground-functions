@@ -1,7 +1,13 @@
-function compareTrue() {
-  // seu código aqui
+function compareTrue(a, b) {
+  if (a && b) {
+    return true;
+  }
+  return false;
 }
-
+const girafa = true;
+const elefante = true;
+const macaco = false;
+console.log(compareTrue(girafa, girafa));
 // Desafio 2
 function calcArea() {
   // seu código aqui
