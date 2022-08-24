@@ -83,11 +83,33 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(word) {
+  let newWorld = '';
+  let obj = {
+    a: 1,
+    e: 2,
+    i: 3,
+    o: 4,
+    u: 5,
+  };
+  for (let letra of word) {
+    newWorld = obj[letra];
+  }
+  return newWorld;
 }
-function decode() {
-  // seu código aqui
+
+function decode(palavra) {
+  let novaPalavra = palavra.replace(/[12345]/g, function (num) {
+    let obj = {
+      1: 'a',
+      2: 'e',
+      3: 'i',
+      4: 'o',
+      5: 'u',
+    };
+    return obj[num];
+  });
+  return novaPalavra;
 }
 
 // Desafio 10
@@ -107,4 +129,4 @@ module.exports = {
   highestCount,
   splitSentence,
   techList,
-}
+};
