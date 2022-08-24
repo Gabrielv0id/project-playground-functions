@@ -66,35 +66,41 @@ function catAndMouse(num1, num2, num3) {
 }
 
 // Desafio 8
+function compare(array, index) {
+  let palvr = '';
+  if (array[index] % 3 === 0 && array[index] % 5 === 0) {
+    palvr = 'fizzBuzz';
+  } else if (array[index] % 3 === 0) {
+    palvr = 'fizz';
+  } else if (array[index] % 5 === 0) {
+    palvr = 'buzz';
+  } else {
+    palvr = 'bug!';
+  }
+  return palvr;
+}
 function fizzBuzz(array) {
   let funcao = [];
   for (let index = 0; index < array.length; index += 1) {
-    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
-      funcao.push('fizzBuzz');
-    } else if (array[index] % 3 === 0) {
-      funcao.push('fizz');
-    } else if (array[index] % 5 === 0){
-      funcao.push('buzz');
-    } else {
-      funcao.push('bug!')
-    }
+    const a = compare(array, index);
+    funcao.push(a);
   }
   return funcao;
 }
 
 // Desafio 9
+// https://stackoverflow.com/questions/52313743/regex-vowels-to-1337-numbers
 function encode(word) {
-  let newWorld = '';
-  let obj = {
-    a: 1,
-    e: 2,
-    i: 3,
-    o: 4,
-    u: 5,
-  };
-  for (let letra of word) {
-    newWorld = obj[letra];
-  }
+  let newWorld = word.replace(/([aeiou])/g, function (vogal) {
+    let obj = {
+      a: 1,
+      e: 2,
+      i: 3,
+      o: 4,
+      u: 5,
+    };
+    return obj[vogal];
+  });
   return newWorld;
 }
 
@@ -113,8 +119,17 @@ function decode(palavra) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, nome) {
+  let resp = [];
+  array.sort();
+  if (array.length > 0) {
+    for (let index = 0; index < array.length; index += 1) {
+      resp.push({ tech: array[index], name: nome });
+    }
+  } else {
+    resp = 'Vazio!';
+  }
+  return resp;
 }
 
 module.exports = {
